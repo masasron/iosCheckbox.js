@@ -1,7 +1,7 @@
 iosCheckbox.js
 ==============
 
-Transform any checkbox element to a beautiful ios like checkbox
+An jQuery plugin that transform any checkbox element into a beautiful ios style checkbox.
 
 ![alt tag](http://s15.postimg.org/gbyj9pzk7/ios_Checbox.png)
 
