@@ -8,11 +8,11 @@
     $.fn.extend({
         iosCheckbox: function ( ) {
 			$(this).each(function (){
-			   /**
+			       /**
 				* Original checkbox element
 				*/
 				var org_checkbox = $(this);
-			   /**
+			       /**
 				* iOS checkbox div
 				*/
 				var ios_checkbox = jQuery("<div>",{class: 'ios-ui-select'}).append(jQuery("<div>",{class: 'inner'}));
