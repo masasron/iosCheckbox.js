@@ -24,7 +24,6 @@ Load jQuery and iosCheckbox
 
 ```
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<!-- Include iosCheckbox -->
 <script type="text/javascript" src="iosCheckbox.js"></script>
 ```
 
@@ -33,7 +32,7 @@ Transform all checkboxs with the class of `ios`
 ```
 <script type="text/javascript">
 	jQuery(function ($){
-		$(".ios").iosCheckbox();
+	     $(".ios").iosCheckbox();
 	});
 </script>
 ```
