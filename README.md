@@ -40,3 +40,5 @@ Transform all checkboxs with the class of `ios`
 	});
 </script>
 ```
+
+We also have a Zepto based version thanks to [LeoUnglaub](https://github.com/LeoUnglaub) you can find it in [here](https://bitbucket.org/foxship/ioscheckbox.js)
