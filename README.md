@@ -13,13 +13,13 @@ Usage:
 
 Include the css
 
-```
+```html
 <link rel="stylesheet" type="text/css" href="iosCheckbox.css" />
 ```
 
 Add some checkboxs to your page
 
-```
+```html
 <input type="checkbox" class="ios" checked />
 <input type="checkbox" class="ios" />
 ```
@@ -33,7 +33,7 @@ Load jQuery and iosCheckbox
 
 Transform all checkboxs with the class of `ios`
 
-```
+```html
 <script type="text/javascript">
 	jQuery(function ($){
 	     $(".ios").iosCheckbox();
