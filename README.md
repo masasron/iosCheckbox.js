@@ -5,9 +5,9 @@ A jQuery plugin that transform any checkbox element into a beautiful ios style c
 
 ![alt tag](http://s15.postimg.org/gbyj9pzk7/ios_Checbox.png)
 
-Demo: http://jsfiddle.net/bttkc3jg/1/
+Demo: http://jsfiddle.net/bttkc3jg/14/
 
-Demo Alternative Theme: http://jsfiddle.net/5xzevfq7/
+Demo Alternative Theme: http://jsfiddle.net/5xzevfq7/6/
 
 Usage:
 
