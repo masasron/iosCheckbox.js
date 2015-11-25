@@ -6,6 +6,11 @@
 (function($) {
     $.fn.extend({
         iosCheckbox: function() {
+            this.destroy = function(){
+                $(this).each(function() {
+            		$(this).next('.ios-ui-select').remove();
+                });
+            };
             if ($(this).attr('data-ios-checkbox') === 'true') {
                 return;
             }
@@ -44,6 +49,7 @@
                     }
                 });
             });
+            return this;
         }
     });
 })(jQuery);
