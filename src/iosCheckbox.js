@@ -52,10 +52,10 @@
                     // Check if the ios checkbox is checked
                     if (ios_checkbox.hasClass("checked")) {
                         // Update state
-                        org_checkbox.prop('checked', true);
+                        org_checkbox.attr('checked','checked');
                     } else {
                         // Update state
-                        org_checkbox.prop('checked', false);
+                        org_checkbox.removeAttr('checked');
                     }
                     
                     // Run click even in case it was registered to the original checkbox element.
