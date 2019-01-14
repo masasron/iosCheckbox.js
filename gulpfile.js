@@ -1,9 +1,16 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+
+/*
+
+[!] Possible security issue with one of the packages below, uncomment at your own risk.
+
 var minifyCSS = require('gulp-csso');
 var cssBeautify = require('gulp-cssbeautify');
 var uglify = require('gulp-uglifyes');
+*/
+
 var rename = require("gulp-rename");
 
 var files = "./src/**/*";
