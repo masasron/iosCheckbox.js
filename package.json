@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/masasron/iosCheckbox.js#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-cssbeautify": "^1.0.1",
     "gulp-csso": "^3.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
-    "gulp-uglifyes": "^0.2.1"
+    "gulp-terser": "^1.1.7"
   }
 }

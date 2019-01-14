@@ -1,54 +1,58 @@
+const { watch, series, src, dest, parallel } = require('gulp');
+const sass = require('gulp-sass');
+const minifyCSS = require('gulp-csso');
+const cssBeautify = require('gulp-cssbeautify');
+const terser = require('gulp-terser');
+const rename = require("gulp-rename");
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var minifyCSS = require('gulp-csso');
-var cssBeautify = require('gulp-cssbeautify');
-var uglify = require('gulp-uglifyes');
-
-var rename = require("gulp-rename");
-
-var files = "./src/**/*";
+const files = "./src/**/*";
 
 function showError (error) {
 	console.log(error.toString())
 	this.emit('end')
 }
 
-gulp.task('css-min', function(){
-    return gulp.src('./src/*.scss')
-      .pipe(sass().on('error', showError))
-      .pipe(minifyCSS())
-      .pipe(rename({ suffix: '.min' }))
-      .pipe(gulp.dest('./dist/css'))
-});
+function css() {
+    return src('./src/*.scss')
+        .pipe(sass().on('error', showError))
+        .pipe(cssBeautify({
+            indent: "\t",
+            autosemicolon: true
+        }))
+        .pipe(rename({ suffix: '' }))
+        .pipe(dest('./dist/css'))
+}
 
-gulp.task('css', function(){
-    return gulp.src('./src/*.scss')
-      .pipe(sass().on('error', showError))
-      .pipe(cssBeautify({
-              indent: "\t",
-              autosemicolon: true
-          }))
-      .pipe(rename({ suffix: '' }))
-      .pipe(gulp.dest('./dist/css'))
-});
+function css_min() {
+    return src('./src/*.scss')
+        .pipe(sass().on('error', showError))
+        .pipe(minifyCSS())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(dest('./dist/css'))
+}
 
-gulp.task('js', function(){
-  return gulp.src('./src/*.js')
-	.pipe(rename({ suffix: '' }))
-    .pipe(gulp.dest('./dist/js'))
-});
+function js() {
+    return src('./src/*.js')
+        .pipe(rename({ suffix: '' }))
+        .pipe(dest('./dist/js'))
+}
 
-gulp.task('js-min', function(){
-  return gulp.src('./src/*.js')
-    .pipe(rename({ suffix: '.min' }))
-	.pipe(uglify({ 
-        mangle: false, 
-        ecma: 6 
-     }))
-    .pipe(gulp.dest('./dist/js'))
-});
+function js_min() {
+    return src('./src/*.js')
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(terser({
+            keep_fnames: true,
+            mangle: false, 
+            ecma: 6 
+        }))
+        .pipe(dest('./dist/js'))
+}
 
-gulp.task('default', ['css','css-min','js','js-min'])
+exports.js = js;
+exports.js_min = js_min;
+exports.css = css;
+exports.css_min = css_min;
 
-gulp.watch(files, ['css','css-min','js','js-min'])
+exports.default = parallel(css, css_min, js, js_min);
+
+watch(files, series(css, css_min, js, js_min));
