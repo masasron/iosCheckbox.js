@@ -4,6 +4,7 @@ iosCheckbox.js
 A jQuery plugin that transform any checkbox element into a beautiful ios style checkbox.
 
 Demo: http://jsfiddle.net/bttkc3jg/31/
+
 Demo Alternative Theme: http://jsfiddle.net/5xzevfq7/9/
 
 Usage:
@@ -11,7 +12,7 @@ Usage:
 Include the css
 
 ```html
-<link rel="stylesheet" type="text/css" href="./src/iosCheckbox.css" />
+<link rel="stylesheet" type="text/css" href="./dist/css/iosCheckbox.css" />
 ```
 
 Add some checkboxs to your page
@@ -25,7 +26,7 @@ Load jQuery and iosCheckbox
 
 ```html
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="./src/iosCheckbox.js"></script>
+<script type="text/javascript" src="./dist/js/iosCheckbox.js"></script>
 ```
 
 Transform all checkboxs with the class of `ios`
