@@ -3,9 +3,9 @@ iosCheckbox.js
 
 A jQuery plugin that transform any checkbox element into a beautiful ios style checkbox.
 
-Demo: http://jsfiddle.net/bttkc3jg/31/
+Demo: http://jsfiddle.net/3q7jr8b6/1/
 
-Demo Alternative Theme: http://jsfiddle.net/5xzevfq7/9/
+Demo Alternative Theme: http://jsfiddle.net/3q7jr8b6/2/
 
 Usage:
 
