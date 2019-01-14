@@ -18,11 +18,23 @@
             
             $(this).attr('data-ios-checkbox', 'true');
             
-            $(this).each(function() {
+            $(this).each(function(i) {
                 /**
                  * Original checkbox element
                  */
                 var org_checkbox = $(this);
+
+                org_checkbox.addClass('ios-checkbox-input');
+
+                /**
+                 * Wrap the input field with a div containing ID and classes
+                 * The ID of wrapper element is based on ID, Name or Index of input field
+                 */
+                var org_checkbox_id = 'ios-checkbox-' + ( org_checkbox.attr('name') || org_checkbox.attr('id') || (i + 1) ),
+                    org_checkbox_classes = 'ios-checkbox-wrap';
+
+                org_checkbox.wrap('<div id="' + org_checkbox_id + '" class="' + org_checkbox_classes + '"></div>');
+
                 /**
                  * iOS checkbox div
                  */
@@ -47,19 +59,18 @@
                 
                 // Add click event listener to the ios checkbox
                 ios_checkbox.click(function() {
+                    if (org_checkbox.is(":disabled")) return; //prevent click on disabled checkbox
+
                     // Toggel the check state
                     ios_checkbox.toggleClass("checked");
                     // Check if the ios checkbox is checked
                     if (ios_checkbox.hasClass("checked")) {
                         // Update state
-                        org_checkbox.prop('checked', true);
+                        org_checkbox.attr('checked','checked');
                     } else {
                         // Update state
-                        org_checkbox.prop('checked', false);
+                        org_checkbox.removeAttr('checked');
                     }
-                    
-                    // Run click even in case it was registered to the original checkbox element.
-                	org_checkbox.click();
                 });
             });
             return this;
